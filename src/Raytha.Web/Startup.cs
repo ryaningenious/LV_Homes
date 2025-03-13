@@ -62,9 +62,13 @@ public class Startup
             {
                 FileProvider = new PhysicalFileProvider(
                     fullPath),
-                    RequestPath = new PathString("/_static-files")
+                RequestPath = new PathString("/_static-files"),
+                ServeUnknownFileTypes = true,
+                DefaultContentType = "application/octet-stream"
             });
         }
+
+        app.UseCors("AllowFrontend");
 
         app.UseSwagger(c =>
         {

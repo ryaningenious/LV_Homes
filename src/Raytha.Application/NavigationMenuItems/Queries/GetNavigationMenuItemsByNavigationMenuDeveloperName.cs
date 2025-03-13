@@ -7,12 +7,12 @@ namespace Raytha.Application.NavigationMenuItems.Queries;
 
 public class GetNavigationMenuItemsByNavigationMenuDeveloperName
 {
-    public record Query : IRequest<IQueryResponseDto<IReadOnlyCollection<NavigationMenuItemDto>>>
+    public record Query : IRequest<IQueryResponseDto<ListResultDto<NavigationMenuItemDto>>>
     {
         public required string NavigationMenuDeveloperName { get; init; }
     }
 
-    public class Handler : IRequestHandler<Query, IQueryResponseDto<IReadOnlyCollection<NavigationMenuItemDto>>>
+    public class Handler : IRequestHandler<Query, IQueryResponseDto<ListResultDto<NavigationMenuItemDto>>>
     {
         private readonly IRaythaDbContext _db;
 
@@ -21,7 +21,7 @@ public class GetNavigationMenuItemsByNavigationMenuDeveloperName
             _db = db;
         }
 
-        public async Task<IQueryResponseDto<IReadOnlyCollection<NavigationMenuItemDto>>> Handle(Query request, CancellationToken cancellationToken)
+        public async Task<IQueryResponseDto<ListResultDto<NavigationMenuItemDto>>> Handle(Query request, CancellationToken cancellationToken)
         {
             var navigationMenuItems = await _db.NavigationMenuItems
                 .Where(nmi => nmi.NavigationMenu!.DeveloperName == request.NavigationMenuDeveloperName)
@@ -29,7 +29,8 @@ public class GetNavigationMenuItemsByNavigationMenuDeveloperName
                 .Select(NavigationMenuItemDto.GetProjection())
                 .ToArrayAsync(cancellationToken);
 
-            return new QueryResponseDto<IReadOnlyCollection<NavigationMenuItemDto>>(navigationMenuItems);
+            return new QueryResponseDto<ListResultDto<NavigationMenuItemDto>>(new ListResultDto<NavigationMenuItemDto>(navigationMenuItems, navigationMenuItems.Count()));
+
         }
     }
 }

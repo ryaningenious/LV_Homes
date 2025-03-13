@@ -7,7 +7,7 @@ services:
     ports:
       - "21108:8080"  # Default port for .NET apps
     volumes:
-      - raytha_user_uploads:/app/user-uploads  # Mount for user-uploaded static file if not using cloud storage (see env variables below)
+      - raytha_raytha_user_uploads:/app/user-uploads  # Mount for user-uploaded static file if not using cloud storage (see env variables below)
     environment:
       # Database connection string
 
@@ -17,8 +17,8 @@ services:
 
       # - PATHBASE= # set a value if you want to run raytha at a path such as mydomain.com/mywebsite instead of just mydomain.com behind a reverse proxy
       
-      # - SMTP_HOST=
-      # - SMTP_PORT=
+      - SMTP_HOST= smtp_lvhomes
+      - SMTP_PORT= 25
       # - SMTP_USERNAME=
       # - SMTP_PASSWORD=
       # - SMTP_FROM_NAME= # optional, if you want to always use this value regardless of what is specified in org settings.
@@ -49,6 +49,7 @@ services:
     
     depends_on:
       - db
+      - smtp
 
   db:
     image: mcr.microsoft.com/mssql/server:2022-latest
@@ -59,10 +60,19 @@ services:
       SA_PASSWORD: "Administrator1!"
       ACCEPT_EULA: "Y"
     volumes:
-      - raytha_pg_data:/var/opt/mssql
+      - raytha_raytha_pg_data:/var/opt/mssql
 #    volumes:
-#      - raytha_pg_data:/var/lib/postgresql/data  # Persistent volume for database storage
+#      - raytha_raytha_pg_data:/var/lib/postgresql/data  # Persistent volume for database storage
+
+  smtp: 
+    image: changemakerstudiosus/papercut-smtp:latest
+    container_name: smtp_lvhomes
+    ports:
+      - "25:25"
+      - "37408:80"
 
 volumes:
-  raytha_pg_data:
-  raytha_user_uploads:
+  raytha_raytha_pg_data:
+    external: true
+  raytha_raytha_user_uploads:
+    external: true

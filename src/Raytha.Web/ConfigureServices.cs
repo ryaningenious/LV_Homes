@@ -153,6 +153,18 @@ public static class ConfigureServices
             c.AddSecurityRequirement(requirement);
         });
 
+        services.AddCors(options =>
+        {
+            options.AddPolicy("AllowFrontend",
+                policy =>
+                {
+                    policy.WithOrigins("http://localhost:5173", "http://localhost:4321", "http://192.168.1.125:3000", "http://192.168.1.125:21108", "http://192.168.1.125:80")
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
+                });
+        });
+
+
         return services;
     }
 }
