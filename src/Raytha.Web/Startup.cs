@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+using System.IO;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpLogging;
@@ -13,8 +15,6 @@ using Raytha.Application;
 using Raytha.Application.Common.Utils;
 using Raytha.Infrastructure.Persistence;
 using Raytha.Web.Middlewares;
-using System;
-using System.IO;
 
 namespace Raytha.Web;
 
@@ -31,7 +31,8 @@ public class Startup
     {
         services.Configure<ForwardedHeadersOptions>(options =>
         {
-            options.ForwardedHeaders = ForwardedHeaders.XForwardedHost | ForwardedHeaders.XForwardedProto;
+            options.ForwardedHeaders =
+                ForwardedHeaders.XForwardedHost | ForwardedHeaders.XForwardedProto;
         });
         services.AddApplicationServices();
         services.AddInfrastructureServices(Configuration);
@@ -52,23 +53,29 @@ public class Startup
 
         app.UseStaticFiles();
 
-        var fileStorageProvider = Configuration[FileStorageUtility.CONFIG_NAME].IfNullOrEmpty(FileStorageUtility.LOCAL).ToLower();
-        var localStorageDirectory = Configuration[FileStorageUtility.LOCAL_DIRECTORY_CONFIG_NAME].IfNullOrEmpty(FileStorageUtility.DEFAULT_LOCAL_DIRECTORY);
+        var fileStorageProvider = Configuration[FileStorageUtility.CONFIG_NAME]
+            .IfNullOrEmpty(FileStorageUtility.LOCAL)
+            .ToLower();
+        var localStorageDirectory = Configuration[FileStorageUtility.LOCAL_DIRECTORY_CONFIG_NAME]
+            .IfNullOrEmpty(FileStorageUtility.DEFAULT_LOCAL_DIRECTORY);
         if (fileStorageProvider == FileStorageUtility.LOCAL)
         {
             var fullPath = Path.Combine(env.ContentRootPath, localStorageDirectory);
-            Directory.CreateDirectory(fullPath);        
-            app.UseStaticFiles(new StaticFileOptions()
-            {
-                FileProvider = new PhysicalFileProvider(
-                    fullPath),
-                RequestPath = new PathString("/_static-files"),
-                ServeUnknownFileTypes = true,
-                DefaultContentType = "application/octet-stream"
-            });
+            Directory.CreateDirectory(fullPath);
+            app.UseStaticFiles(
+                new StaticFileOptions()
+                {
+                    FileProvider = new PhysicalFileProvider(fullPath),
+                    RequestPath = new PathString("/_static-files"),
+                    ServeUnknownFileTypes = true,
+                    DefaultContentType = "application/octet-stream",
+                }
+            );
         }
 
         app.UseCors("AllowFrontend");
+
+        app.UseHttpsRedirection();
 
         app.UseSwagger(c =>
         {
@@ -90,10 +97,14 @@ public class Startup
             endpoints.MapControllers();
         });
 
-        bool applyMigrationsOnStartup = Convert.ToBoolean(Configuration["APPLY_PENDING_MIGRATIONS"] ?? "false");
+        bool applyMigrationsOnStartup = Convert.ToBoolean(
+            Configuration["APPLY_PENDING_MIGRATIONS"] ?? "false"
+        );
         if (applyMigrationsOnStartup)
         {
-            using (var scope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            using (
+                var scope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope()
+            )
             {
                 scope.ServiceProvider.GetRequiredService<RaythaDbContext>().Database.Migrate();
             }
