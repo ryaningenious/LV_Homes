@@ -46,7 +46,7 @@ services:
       
       # - REDIRECT_WEBSITE= # Only set a url here to redirect the website visitor elsewhere (useful for maintenance or non-payment)
       # - APPLY_PENDING_MIGRATIONS=true # Apply db migrations automatically on startup
-    
+    restart: unless-stopped
     depends_on:
       - db
       - smtp
@@ -59,6 +59,7 @@ services:
     environment:
       SA_PASSWORD: "Administrator1!"
       ACCEPT_EULA: "Y"
+    restart: always
     volumes:
       - raytha_raytha_pg_data:/var/opt/mssql
 #    volumes:
@@ -70,6 +71,7 @@ services:
     ports:
       - "25:25"
       - "37408:80"
+    restart: always
 
 volumes:
   raytha_raytha_pg_data:
