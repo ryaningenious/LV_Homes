@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import "tailwindcss";
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+@theme {
+  --font-tinos: "Tinos", serif;
+  --font-montserrat: "Montserrat", serif;
+
+  --color-muted-emerald: #2e5f52;
+  --color-deep-teal: #0f3740;
+  --color-dark-charcoal: #1a1a1a;
+  --color-gold-100: #f2ca99;
+  --color-gold-200: #f2c166;
+  --color-gold-300: #bf871f;
+  --color-gold-400: #a6771f;
+
+  --animate-shining: shining 10s ease infinite;
+
+  @keyframes shining {
+    0%,
+    100% {
+      background-size: 200% 200%;
+      background-position: -200%;
+    }
+    50% {
+      background-size: 200% 200%;
+      background-position: 200%;
+    }
+  }
+}
+
+.tinos-regular {
+  font-family: "Tinos", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.tinos-bold {
+  font-family: "Tinos", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.tinos-regular-italic {
+  font-family: "Tinos", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.tinos-bold-italic {
+  font-family: "Tinos", serif;
+  font-weight: 700;
+  font-style: italic;
+}

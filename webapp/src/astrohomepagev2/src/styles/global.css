@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import "tailwindcss";
+
+:root {
+  font-family: Montserrat, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: NyghtSerif;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/fonts/NyghtSerif-MediumItalic.woff2") format("woff2");
+}
+
+@theme {
+  --font-nunito: "Nunito", sans-serif;
+  --font-nyght: "NyghtSerif", san-serif;
+  --font-montserrat: "Montserrat", serif;
+
+  --color-muted-emerald: #2e5f52;
+  --color-deep-teal: #0f3740;
+  --color-dark-charcoal: #1a1a1a;
+  --color-gold-100: #f2ca99;
+  --color-gold-200: #f2c166;
+  --color-gold-300: #bf871f;
+  --color-gold-400: #a6771f;
+
+  --animate-shining: shining 10s ease infinite;
+
+  @keyframes shining {
+    0%,
+    100% {
+      background-size: 200% 200%;
+      background-position: -200%;
+    }
+    50% {
+      background-size: 200% 200%;
+      background-position: 200%;
+    }
+  }
+}
+
+.sticky-bot {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+}

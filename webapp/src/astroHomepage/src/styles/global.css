@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "tailwindcss";
+
+:root {
+  font-family: Montserrat, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: NyghtSerif;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/_static-files/60Fbc0uCMkq4KzywRVGMgg_nyghtserif_mediumitalic.woff2") format("woff2");
+}
+
+@theme {
+  --font-nunito: "Nunito", sans-serif;
+  --font-nyght: "NyghtSerif", san-serif;
+  --font-poppins: "Poppins", san-serif;
+  --font-montserrat: "Montserrat", serif;
+
+  --color-muted-emerald: #2e5f52;
+  --color-deep-teal: #062633;
+  --color-dark-charcoal: #1a1a1a;
+  --color-gold-100: #f2ca99;
+  --color-gold-150: #fada9a;
+  --color-gold-200: #f2c166;
+  --color-gold-250: #c3921f;
+  --color-gold-300: #bf871f;
+  --color-gold-400: #a6771f;
+  --color-gold-500: #d4af37;
+
+  --animate-shining: shining 10s ease infinite;
+
+  @keyframes shining {
+    0%,
+    100% {
+      background-size: 200% 200%;
+      background-position: -200%;
+    }
+    50% {
+      background-size: 200% 200%;
+      background-position: 200%;
+    }
+  }
+}
+
+.sticky-bot {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+}
+
+.drawer.open {
+  left: 0;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 777;
+}
+
+.overlay.show {
+  display: block;
+}
+
+.footer {
+  /* background-color: #0f3740; Charcoal Gray */
+  color: #103746;
+  padding: 40px 0;
+  font-family: "Arial", sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+}
+
+/* Logo */
+.footer-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Navigation Links */
+.footer-navigation h3,
+.footer-contact h3,
+.footer-social h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #d4af37; /* Gold */
+}
+
+.footer-navigation ul,
+.footer-contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-navigation ul li,
+.footer-contact ul li {
+  margin-bottom: 10px;
+}
+
+.footer-navigation ul li a {
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-navigation ul li a:hover {
+  color: #d4af37; /* Gold */
+  text-decoration: underline;
+  transform: translateX(5px);
+  transition: all 0.3s ease-in-out;
+}
+/*.footer-navigation ul li a:hover {
+  text-decoration: underline;
+  transform: translateX(5px);
+  transition: all 0.3s ease-in-out;
+}*/
+
+/* Contact Information */
+.footer-contact ul li {
+  color: whitesmoke;
+  font-size: 14px;
+}
+
+/* Social Media Icons */
+.footer-social .social-icons {
+  fill: whitesmoke;
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social .social-icons img {
+  width: 24px;
+  height: 24px;
+  transition: opacity 0.3s ease;
+}
+
+.footer-social .social-icons img:hover {
+  opacity: 0.7;
+}
+
+/* Copyright Notice */
+.footer-copyright {
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #444;
+}

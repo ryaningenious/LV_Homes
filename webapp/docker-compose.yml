@@ -1,0 +1,26 @@
+services:
+  dubai-map-app:
+    build:
+      context: ./src/dubai-map-app
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src/dubai-map-app:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    depends_on:
+      - filehost
+
+  filehost:
+    build:
+      context: ./src/filehost
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./src/filehost:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development

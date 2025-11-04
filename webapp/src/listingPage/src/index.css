@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "tailwindcss";
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+@theme {
+  --font-nunito: "Nunito", sans-serif;
+  --font-nyght: "NyghtSerif", san-serif;
+  --font-poppins: "Poppins", san-serif;
+  --font-montserrat: "Montserrat", serif;
+
+  --color-muted-emerald: #2e5f52;
+  --color-deep-teal: #062633;
+  --color-dark-charcoal: #1a1a1a;
+  --color-gold-100: #f2ca99;
+  --color-gold-150: #fada9a;
+  --color-gold-200: #f2c166;
+  --color-gold-250: #c3921f;
+  --color-gold-300: #bf871f;
+  --color-gold-400: #a6771f;
+  --color-gold-500: #d4af37;
+
+  --animate-shining: shining 10s ease infinite;
+
+  @keyframes shining {
+    0%,
+    100% {
+      background-size: 200% 200%;
+      background-position: -200%;
+    }
+    50% {
+      background-size: 200% 200%;
+      background-position: 200%;
+    }
+  }
+}
+
+.tinos-regular {
+  font-family: "Tinos", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.tinos-bold {
+  font-family: "Tinos", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.tinos-regular-italic {
+  font-family: "Tinos", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.tinos-bold-italic {
+  font-family: "Tinos", serif;
+  font-weight: 700;
+  font-style: italic;
+}

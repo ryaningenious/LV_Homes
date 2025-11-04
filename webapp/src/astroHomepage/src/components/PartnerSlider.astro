@@ -1,0 +1,93 @@
+---
+import "../styles/global.css";
+import { getPartners, type Partner } from "../utils/api/partnerService";
+
+let partnersFeatures: Partner[] = [];
+
+const fetchData = async () => {
+  try {
+    partnersFeatures = await getPartners();
+  } catch (error) {}
+};
+
+await fetchData();
+---
+
+<section class="embla w-screen overflow-hidden">
+  <div class="embla__viewport overflow-hidden mx-auto">
+    <div class="embla__container flex flex-nowrap">
+      {
+        partnersFeatures.map((el, i) => (
+          <div class="h-32 min-h-32 min-w-40 flex justify-center items-center p-5">
+            <img
+              src={`${import.meta.env.VITE_STATIC_FILE}/${el.logo}`}
+              alt=""
+              class="size-32 hover:scale-[1.3] duration-300 ease-in-out"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .embla {
+    /* max-width: 48rem; */
+    margin: auto;
+    --slide-height: 19rem;
+    --slide-spacing: 1rem;
+    --slide-size: 30%;
+  }
+  .embla__viewport {
+    overflow: hidden;
+  }
+  .embla__container {
+    /* display: flex; */
+    touch-action: pan-y pinch-zoom;
+    /* margin-left: calc(var(--slide-spacing) * -1); */
+  }
+  .embla__slide {
+    transform: translate3d(0, 0, 0);
+    flex: 0 0 var(--slide-size);
+    min-width: 0;
+    padding-left: var(--slide-spacing);
+  }
+  .embla__slide__number {
+    box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+    border-radius: 1.8rem;
+    font-size: 4rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--slide-height);
+    user-select: none;
+  }
+</style>
+
+<script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
+<script
+  src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"
+></script>
+<script
+  src="https://unpkg.com/embla-carousel-auto-scroll/embla-carousel-auto-scroll.umd.js"
+></script>
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    const OPTIONS = { dragFree: true, loop: true };
+
+    const emblaNode = document.querySelector(".embla");
+    const viewportNode = emblaNode.querySelector(".embla__viewport");
+
+    if (!EmblaCarousel || !EmblaCarouselAutoplay || !EmblaCarouselAutoScroll) {
+      console.error("EmblaCarousel or Autoplay plugin failed to load.");
+      return;
+    }
+
+    const emblaApi = EmblaCarousel(viewportNode, OPTIONS, [
+      EmblaCarouselAutoScroll({ playOnInit: true }),
+    ]);
+  });
+</script>

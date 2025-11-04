@@ -1,0 +1,638 @@
+---
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import Footer from "./Footer.astro";
+import GrainyBackground from "./GrainyBackground.astro";
+import Water from "./Water.astro";
+import "../styles/global.css";
+import Drawer from "./Drawer.astro";
+import { getFeatures, type Feature } from "../utils/api/featureService";
+import PartnerSlider from "./PartnerSlider.astro";
+import PartnerSliderReverse from "./PartnerSliderReverse.astro";
+import { getProjects, type Project } from "../utils/api/projectService";
+import { getPosts, type Post } from "../utils/api/postService";
+const demoData = async () => {
+  Promise.resolve([1, 2, 3, 4, 5, 6, 7]);
+};
+
+let responseFeatures: Feature[] = [];
+let responseProjects: Project[] = [];
+let responsePosts: Post[] = [];
+
+const fetchData = async () => {
+  try {
+    responseFeatures = await getFeatures();
+    responseProjects = await getProjects();
+    responsePosts = await getPosts();
+  } catch (error) {}
+};
+
+await fetchData();
+---
+
+<div class="relative font-poppins bg-deep-teal">
+  <div class="">
+    <div
+      id="fixed-nav"
+      class="fixed top-0 left-0 z-999 right-0 duration-300 ease-in-out"
+    >
+      <div
+        class="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-6 py-4 md:py-2"
+      >
+        <div class="flex-1">
+          <img
+            src={`${
+              import.meta.env.VITE_STATIC_FILE
+            }/Bi7T037PrUaprig4RTNA7A_lv_homes_logo_03.png`}
+            alt=""
+            class="size-24"
+          />
+        </div>
+        <div
+          id="nav-menus"
+          class="flex-1 hidden md:flex items-center gap-4 md:gap-8 justify-center pr-4 bg-gradient-to-r from-gold-100 via-gold-200 via-gold-400 via-gold-300 to-gold-100 bg-clip-text animate-shining font-montserrat py-2"
+        >
+          <a href="#work" class="menu hover:text-transparent hover:font-semibold"> About Us </a>
+          <a href="#about" class="menu hover:text-transparent hover:font-semibold"> Listings </a>
+          <a href="#contact" class="menu hover:text-transparent hover:font-semibold"> Contact </a>
+        </div>
+        <div class="flex-1 hidden md:flex justify-end">
+          <a href="/dubai"
+            ><button
+              class="px-8 py-2 rounded-full shadow-lg bg-white text-deep-teal font-bold"
+              ><div class="flex items-center gap-2">
+                <div>MAPS</div>
+                <div>
+                  <svg
+                    version="1.0"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    viewBox="0 0 1500.000000 1500.000000"
+                    preserveAspectRatio="xMidYMid meet"
+                  >
+                    <g
+                      transform="translate(0.000000,1500.000000) scale(0.100000,-0.100000)"
+                      fill="#000000"
+                      stroke="none"
+                    >
+                      <path
+                        d="M6230 13286 c-1532 -350 -2865 -1271 -3737 -2581 -840 -1261 -1179
+                 -2802 -947 -4305 340 -2208 1857 -4052 3960 -4813 1285 -466 2703 -484 4004
+                 -51 1821 607 3257 2043 3864 3864 104 313 196 686 196 795 0 212 -160 390
+                 -376 420 -156 21 -346 -81 -418 -224 -14 -28 -42 -119 -61 -203 -126 -548
+                 -331 -1069 -602 -1528 l-68 -115 -69 -7 c-55 -5 -94 -19 -214 -76 -149 -71
+                 -280 -119 -407 -148 -100 -22 -167 -59 -230 -125 -128 -134 -156 -312 -78
+                 -478 26 -53 108 -147 148 -169 19 -10 19 -11 -5 -38 -51 -54 -319 -280 -455
+                 -382 -707 -529 -1535 -874 -2395 -996 -284 -40 -437 -51 -760 -51 -323 0 -477
+                 11 -759 51 -1341 191 -2569 911 -3411 1999 -341 441 -631 983 -815 1526 -30
+                 89 -55 165 -55 169 0 4 28 18 63 30 34 12 136 60 227 105 91 45 227 108 302
+                 140 76 32 159 75 185 95 131 99 194 291 147 451 -23 76 -56 128 -119 188 -63
+                 60 -138 97 -224 112 -114 20 -205 -8 -564 -177 -108 -51 -197 -89 -197 -86 0
+                 4 -7 75 -15 157 -115 1184 184 2385 842 3384 329 500 764 962 1248 1326 584
+                 438 1269 753 2002 919 176 40 238 68 309 142 124 127 155 307 80 470 -69 150
+                 -219 245 -385 243 -37 0 -130 -15 -211 -33z"
+                      ></path>
+                      <path
+                        d="M10000 13305 c-628 -72 -1205 -313 -1705 -711 -140 -112 -376 -347
+                 -489 -489 -379 -473 -615 -1030 -688 -1625 -17 -136 -17 -554 0 -690 134
+                 -1088 803 -2042 2057 -2937 302 -215 653 -438 761 -483 151 -63 211 -74 404
+                 -74 162 0 182 2 265 27 127 38 241 97 463 239 1362 870 2140 1780 2407 2814
+                 74 287 100 526 92 847 -6 251 -27 411 -82 634 -113 460 -310 861 -613 1243
+                 -103 129 -393 416 -523 518 -473 366 -976 582 -1564 672 -184 28 -598 36 -785
+                 15z m637 -850 c441 -58 863 -240 1212 -523 722 -585 1030 -1500 800 -2372
+                 -212 -801 -900 -1567 -2067 -2303 -187 -118 -229 -136 -287 -119 -36 11 -342
+                 204 -530 335 -799 556 -1312 1098 -1590 1680 -100 209 -162 404 -202 632 -25
+                 142 -25 558 0 700 42 236 106 434 207 640 353 718 1052 1222 1845 1329 141 19
+                 466 20 612 1z"
+                      ></path>
+                      <path
+                        d="M10119 11334 c-429 -77 -795 -372 -956 -772 -19 -46 -46 -132 -60
+                 -190 -24 -94 -27 -127 -28 -277 0 -235 33 -383 130 -578 116 -233 335 -451
+                 566 -565 171 -84 322 -121 520 -129 276 -11 517 57 751 213 350 233 558 624
+                 558 1049 0 344 -127 653 -370 895 -186 187 -423 309 -684 355 -109 18 -322 18
+                 -427 -1z m349 -849 c141 -42 259 -184 283 -339 28 -175 -61 -345 -224 -432
+                 -72 -39 -73 -39 -187 -39 -109 0 -119 2 -182 32 -86 41 -155 109 -199 198 -32
+                 66 -34 75 -34 180 0 103 2 114 32 177 75 159 244 257 413 241 30 -3 74 -11 98
+                 -18z"
+                      ></path>
+                      <path
+                        d="M4266 7109 c-113 -39 -196 -115 -250 -228 -29 -61 -31 -74 -31 -171
+                 0 -97 2 -110 32 -172 43 -92 110 -160 197 -203 58 -28 97 -39 209 -55 283 -41
+                 503 -102 837 -233 63 -25 140 -48 170 -52 122 -15 261 37 349 130 204 216 134
+                 553 -142 680 -217 100 -586 217 -862 274 -268 55 -412 63 -509 30z"
+                      ></path>
+                      <path
+                        d="M6785 6026 c-128 -31 -232 -115 -288 -233 -30 -64 -32 -75 -32 -178
+                 0 -102 2 -115 31 -175 40 -86 78 -127 183 -202 47 -35 174 -128 281 -207 431
+                 -320 479 -350 596 -366 103 -13 238 28 322 101 189 161 196 461 14 624 -31 28
+                 -138 110 -237 182 -99 73 -262 192 -363 265 -198 145 -249 175 -330 192 -66
+                 14 -112 13 -177 -3z"
+                      ></path>
+                      <path
+                        d="M8906 4670 c-196 -62 -323 -270 -287 -467 25 -138 101 -244 218 -306
+                 172 -90 661 -264 949 -338 179 -45 254 -49 345 -19 79 27 123 56 182 119 151
+                 161 145 422 -12 579 -68 68 -126 95 -306 141 -193 50 -431 129 -620 207 -227
+                 93 -262 104 -340 103 -40 0 -95 -8 -129 -19z"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+              </div></button
+            ></a
+          >
+        </div>
+        <div
+          class="flex-1 md:hidden flex justify-end items-start text-white pr-2 h-full"
+        >
+          <Drawer />
+        </div>
+      </div>
+    </div>
+    <div class="h-[35vh]"></div>
+
+    <nav id="navbar" class="px-4 md:px-6 py-4 md:py-8">
+      <div class="max-w-7xl mx-auto flex justify-between items-center relative">
+        <div class="flex-1 hidden md:block"></div>
+        <div class="flex-1 flex md:justify-center">
+          <a
+            id="company-logo"
+            href="/"
+            class="hidden md:block text-xl md:text-2xl font-medium scale-500"
+          >
+            <img
+              src={`${
+                import.meta.env.VITE_STATIC_FILE
+              }/Bi7T037PrUaprig4RTNA7A_lv_homes_logo_03.png`}
+              alt=""
+              class="w-16 h-16"
+            />
+          </a>
+          <a
+            id="company-logo-mbl"
+            href="/"
+            class="absolute top-0 left-1/2 -translate-x-[50%] -translate-y-[40%] md:hidden text-xl md:text-2xl font-medium"
+          >
+            <img
+              src={`${
+                import.meta.env.VITE_STATIC_FILE
+              }/Bi7T037PrUaprig4RTNA7A_lv_homes_logo_03.png`}
+              alt=""
+              class="size-64 min-w-64"
+            />
+          </a>
+        </div>
+        <div class="flex-1 hidden md:flex"></div>
+        <div class="md:hidden flex-1 flex justify-end"></div>
+      </div>
+    </nav>
+
+    <div
+      id="hero-tagline"
+      class="px-4 md:px-6 py-4 md:py-8 mt-32 md:mt-16 md:space-y-3 mb-48"
+    >
+      <div
+        class="max-w-7xl mx-auto font-semibold text-2xl md:text-5xl text-center bg-gradient-to-r from-gold-100 via-gold-200 via-gold-400 via-gold-300 to-gold-100 bg-clip-text text-transparent animate-shining font-montserrat font-bold py-2"
+      >
+        Discover Luxury Living
+      </div>
+      <div
+        class="max-w-7xl mx-auto text-lg md:text-3xl text-center font-nunito"
+      >
+        Where dreams become <span class="font-nyght">reality</span>
+      </div>
+      <div class="flex justify-center mt-5">
+        <a href="/dubai"><button class="h-16 w-48 border">Explore</button></a>
+      </div>
+    </div>
+
+    <div id="tag-section" class="min-h-[50vh] max-h-[50vh]">
+      <div
+        id="tag-section-content"
+        class="sticky top-1/2 left-0 right-0 mx-auto text-center py-16 bg-gradient-to-br from-gold-250 to-gold-150 bg-clip-text text-transparent"
+      >
+        <div class="text-[4em]/14 md:text-[10em]/40 m-0 p-0">YOUR PARTNER</div>
+        <div class="text-[4em]/14 md:text-[10em]/40 m-0 p-0">
+          IN DUBAI REAL ESTATE
+        </div>
+      </div>
+    </div>
+
+    <section id="about-section" class="hidden md:block">
+      <div class="h-screen relative">
+        <div class="flex justify-center">
+          <div
+            id="about-gradient"
+            class="absolute top-0 right-0 left-0 bottom-0 z-20 bg-gradient-to-t from-deep-teal from-[15%] to-transparent to-[90%] size-full h-screen"
+          >
+          </div>
+          <div
+            id="about-content-background"
+            class="font-nyght absolute top-0 z-10 text-5xl px-16 w-full h-screen flex items-center justify-center overflow-hidden"
+          >
+            <img
+              src={`${
+                import.meta.env.VITE_STATIC_FILE
+              }/k_cGTzUEj0KO0Ufa4AYeRw_about_section.png`}
+              alt=""
+              srcset=""
+              sizes="100vw"
+              class="absolute top-0 right-0 left-0 z-10 w-screen h-screen object-cover"
+            />
+          </div>
+          <div
+            id="about-content"
+            class="absolute font-thin bottom-0 z-30 text-4xl px-16 pb-16 w-full flex items-center justify-center"
+          >
+            " At Lux Veritas Homes, we believe in crafting homes that blend
+            elegance with integrity. Our mission is to bring light and truth
+            into every space we design, creating lasting value and comfort for
+            every homeowner.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about-section-mbl" class="md:hidden">
+      <div class="flex justify-center items-center h-screen bg-black relative">
+        <img
+          src={`${
+            import.meta.env.VITE_STATIC_FILE
+          }/k_cGTzUEj0KO0Ufa4AYeRw_about_section.png`}
+          alt=""
+          srcset=""
+          sizes="100vw"
+          class="w-screen h-screen object-cover"
+        />
+        <div
+          class="absolute bottom-0 pb-16 z-20 right-0 left-0 md:font-thin text-xl md:text-3xl px-16"
+        >
+          " At Lux Veritas Homes, we believe in crafting homes that blend
+          elegance with integrity. Our mission is to bring light and truth into
+          every space we design, creating lasting value and comfort for every
+          homeowner. "
+        </div>
+        <div
+          class="absolute top-0 z-10 size-full bg-gradient-to-t from-deep-teal from-[15%] to-transparent"
+        >
+        </div>
+      </div>
+    </section>
+
+    <div id="offer-section" class="light mt-48">
+      <div class="min-h-screen overflow-hidden">
+        <div class="space-y-8 w-[95vw] overflow-hidden w-full">
+          <div
+            class="max-w-7xl size-full mx-auto flex justify-center md:justify-start"
+          >
+            <div
+              class="text-center md:text-left text-5xl md:text-7xl bg-gradient-to-r from-gold-250 to-gold-150 text-transparent bg-clip-text py-4"
+            >
+              What We Offer
+            </div>
+          </div>
+          <div
+            id="offer-list"
+            class="max-w-7xl mx-auto min-h-150 flex flex-nowrap overflow-hidden"
+          >
+            {
+              responseFeatures &&
+                responseFeatures.map((el, i) => (
+                  <div
+                    class={`text-deep-teal content relative max-w-7xl min-h-150 min-w-[100%] flex w-full flex-col md:flex-row md:flex-row-reverse`}
+                  >
+                    <div class="grow w-full p-8">
+                      <img
+                        src={`${import.meta.env.VITE_STATIC_FILE}/${el.image}`}
+                        alt=""
+                        class="size-full object-cover bg-gray-100"
+                      />
+                    </div>
+                    <div class="min-w-[40%]">
+                      <div
+                        class={`w-full p-8 flex flex-col justify-center text-white md:text-deep-teal md:bg-white/90 
+                        md:absolute md:top-1/2 md:max-w-[50%] md:-translate-y-[50%]
+                       
+                        `}
+                      >
+                        <div class="text-2xl md:text-7xl font-semibold">
+                          {el.title}
+                        </div>
+                        <div>{el.description}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="featured-section" class="mb-48">
+      <div class="min-h-screen space-y-16 pb-16 pt-8 w-full">
+        <div
+          class="max-w-7xl size-full mx-auto flex justify-center md:justify-end"
+        >
+          <div
+            class="text-center md:text-right text-5xl md:text-7xl bg-gradient-to-r from-gold-250 to-gold-150 text-transparent bg-clip-text py-4"
+          >
+            Featured Project
+          </div>
+        </div>
+        <div
+          class="max-w-7xl mx-auto flex flex-col md:flex-row justify-center items-center flex-wrap gap-4 gap-y-16"
+        >
+          {
+            responseProjects.map((el, i) => (
+              <div class="size-96 basis-1 md:basis-1/4 hover:scale-[1.1] duration-300 ease-in-out hover:font-semibold hover:-translate-y-[5%]">
+                <a
+                  href={`${import.meta.env.VITE_ROUTE}${el.routePath}`}
+                  class="w-full"
+                >
+                  <div class="w-full h-64 md:size-88 mx-auto">
+                    <img
+                      src={`${import.meta.env.VITE_STATIC_FILE}/${
+                        el.main_image
+                      }`}
+                      alt=""
+                      class="w-full grow size-64 md:size-88 object-cover"
+                    />
+                  </div>
+                </a>
+                <div class="text-center mt-4">{el.title}</div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <div id="partner-section" class="bg-white py-8 text-gray-900 mb-48">
+      <div class="flex flex-col justify-center items-center space-y-16">
+        <div>
+          <PartnerSlider />
+          <PartnerSliderReverse />
+        </div>
+      </div>
+    </div>
+
+    <div id="blog-section" class="min-h-screen">
+      <div class="min-h-[75vh] space-y-16 py-16">
+        <div
+          class="max-w-7xl size-full mx-auto flex justify-center md:justify-start"
+        >
+          <div
+            class="text-center md:text-left text-5xl md:text-7xl bg-gradient-to-r from-gold-250 to-gold-150 text-transparent bg-clip-text py-4"
+          >
+            Blogs
+          </div>
+        </div>
+        <div
+          class="flex flex-col md:flex-row justify-center items-center gap-4 max-w-7xl mx-auto p-4"
+        >
+          {
+            responsePosts.map((el, i) => (
+              <div class="min-w-[100%] md:min-w-[30%] min-h-96 flex-1 flex flex-col flex-nowrap hover:scale-[1.1] duration-300 ease-in-out hover:font-semibold hover:-translate-y-[5%]">
+                <div class="w-full">
+                  <a href={`${import.meta.env.VITE_ROUTE}${el.routePath}`}>
+                    <img
+                      src={`${import.meta.env.VITE_STATIC_FILE}/${
+                        el.featured_image
+                      }`}
+                      alt=""
+                      class="w-full grow bg-gray-300 min-h-64"
+                    />
+                  </a>
+                </div>
+                <div class="p-4 text-xl">{el.title}</div>
+              </div>
+            ))
+          }
+        </div>
+        <div class="flex justify-center">
+          <a href="/posts" class="">
+            <button
+              class="bg-white text-deep-teal shadow-lg px-16 py-2 rounded-full border-gray-50 hover:scale-[1.1] duration-300 ease-in-out"
+            >
+              Read More
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="dark relative bg-deep-teal font-poppins min-h-screen">
+  <Water />
+  <Footer />
+</div>
+
+<style></style>
+<script
+  defer
+  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script
+  defer
+  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+></script>
+<script src="https://unpkg.com/lenis@1.1.22/dist/lenis.min.js"></script>
+
+<script>
+  let lastScrollTop = 0;
+  const navbar = document.getElementById("fixed-nav");
+
+  window.addEventListener("scroll", () => {
+    let scrollTop = window.scrollY;
+
+    if (!navbar) return;
+
+    if (scrollTop > lastScrollTop) {
+      // Scroll Down - Hide Navbar
+      navbar.style.transform = "translateY(-100%)";
+    } else {
+      // Scroll Up - Show Navbar
+      navbar.style.transform = "translateY(0)";
+    }
+
+    lastScrollTop = scrollTop;
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Initialize a new Lenis instance for smooth scrolling
+    const lenis = new Lenis();
+
+    // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+    lenis.on("scroll", ScrollTrigger.update);
+
+    // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+    // This ensures Lenis's smooth scroll animation updates on each GSAP tick
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+    });
+
+    // Disable lag smoothing in GSAP to prevent any delay in scroll animations
+    gsap.ticker.lagSmoothing(0);
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: "#tag-section",
+          start: "top center",
+          end: "top 40%",
+          scrub: 0.5,
+        },
+      })
+      .fromTo(
+        "#tag-section-content",
+        {
+          y: "150%",
+        },
+        {
+          y: "0",
+          scale: 1,
+          duration: 5,
+          ease: "power1.in",
+        }
+      );
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: "#tag-section",
+          start: "top center",
+          end: "top 40%",
+          scrub: 0.5,
+        },
+      })
+      .fromTo(
+        "#hero-tagline",
+        {
+          opacity: 1,
+        },
+        {
+          opacity: 0,
+          scale: 1,
+          duration: 5,
+          ease: "power1.in",
+        }
+      );
+
+    gsap.fromTo(
+      "#tag-section",
+      {
+        y: "0%",
+      },
+      {
+        y: "100%",
+        ease: "none",
+        scrollTrigger: {
+          trigger: "#about-section",
+          start: "top center",
+          end: "bottom bottom",
+          scrub: 0,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      "#fixed-nav",
+      {
+        backgroundColor: "transparent",
+      },
+      {
+        backgroundColor: "#062633",
+        scrollTrigger: {
+          trigger: "#tag-section",
+          start: "top top",
+          end: "top 40%",
+          scrub: 0.5,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      "#about-section-mbl",
+      {
+        y: "50%",
+      },
+      {
+        y: "0%",
+        scrollTrigger: {
+          trigger: "#tag-section",
+          start: "bottom center",
+          end: "bottom 30%",
+          scrub: 0.5,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      "#about-content",
+      {
+        scale: 0,
+        borderRadius: "500% 500% 0% 0%;",
+      },
+      {
+        scale: 1,
+        borderRadius: "0% 0% 0% 0%;",
+
+        scrollTrigger: {
+          trigger: "#about-section",
+          start: "top center",
+          end: "bottom bottom",
+          scrub: 0.5,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      "#about-gradient",
+      {
+        y: "100%",
+      },
+      {
+        y: "0%",
+        scrollTrigger: {
+          trigger: "#about-section",
+          start: "top center",
+          end: "bottom bottom",
+          scrub: 0.5,
+        },
+      }
+    );
+    gsap.fromTo(
+      "#about-content-background",
+      {
+        y: "100%",
+        borderRadius: "500% 500% 0% 0%;",
+        width: "0vw",
+      },
+      {
+        y: "0%",
+        borderRadius: "0% 0% 0% 0%;",
+        width: "100vw",
+        scrollTrigger: {
+          trigger: "#about-section",
+          start: "top 80%",
+          end: "bottom bottom",
+          scrub: 0.5,
+        },
+      }
+    );
+    const offerArray = gsap.utils.toArray("#offer-list .content");
+
+    gsap.to(offerArray, {
+      xPercent: -100 * (offerArray.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#offer-section",
+        start: "top top",
+        end: "+=1000",
+        pin: true,
+        scrub: 0.8,
+        snap: 1 / (offerArray.length - 1),
+      },
+    });
+  });
+</script>

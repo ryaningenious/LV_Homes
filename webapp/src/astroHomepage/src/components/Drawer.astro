@@ -1,0 +1,100 @@
+---
+import "../styles/global.css";
+---
+
+<button
+  id="nav-menuBtn"
+  class="nav-menuBtn md:hidden w-8 h-8 flex flex-col justify-center gap-1.5"
+>
+  <span class="w-full h-0.5 bg-white"></span>
+  <span class="w-full h-0.5 bg-white"></span>
+  <span class="w-full h-0.5 bg-white"></span>
+</button>
+<div id="overlay" class="overlay"></div>
+<div
+  id="drawer"
+  class="drawer bg-white fixed top-0 left-[-250px] w-[250px] h-screen bg-white text-black transition-[left] duration-300 ease-in-out p-[20px] z-999"
+>
+  <button class="nav-menuBtnClose"
+    ><svg
+      width="800px"
+      height="800px"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-12 h-12"
+    >
+      <circle cx="12" cy="12" r="10" stroke="#1C274C" stroke-width="1"></circle>
+      <path
+        d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5"
+        stroke="#1C274C"
+        stroke-width="1.5"
+        stroke-linecap="round"></path>
+    </svg></button
+  >
+  <div class="space-y-4 text-xl mt-16">
+    <p>About Us</p>
+    <p>Listing</p>
+    <p>Contact</p>
+    <p>Maps</p>
+  </div>
+</div>
+
+<script>
+  document.getElementById("drawer")?.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  const openDrawer = () => {
+    document.getElementById("drawer")?.classList.add("open");
+    document.getElementById("overlay")?.classList.add("show");
+  };
+
+  const closeDrawer = () => {
+    document.getElementById("drawer")?.classList.remove("open");
+    document.getElementById("overlay")?.classList.remove("show");
+  };
+
+  // Find all buttons with the `alert` class on the page.
+  const buttons = document.querySelectorAll("button.nav-menuBtn");
+
+  // Handle clicks on each button.
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      openDrawer();
+    });
+  });
+
+  // Find all buttons with the `alert` class on the page.
+  const buttonsClosed = document.querySelectorAll("button.nav-menuBtnClose");
+
+  // Handle clicks on each button.
+  buttonsClosed.forEach((button) => {
+    button.addEventListener("click", () => {
+      closeDrawer();
+    });
+  });
+
+  // Find all buttons with the `alert` class on the page.
+  const overlayClosed = document.querySelectorAll("div.overlay");
+
+  // Handle clicks on each button.
+  overlayClosed.forEach((button) => {
+    button.addEventListener("click", () => {
+      closeDrawer();
+    });
+  });
+
+  let lastScrollTop = 0;
+
+  window.addEventListener("scroll", () => {
+    let scrollTop = window.scrollY;
+
+    if (scrollTop > lastScrollTop) {
+      // Scroll Down - Hide Navbar
+      closeDrawer();
+    }
+
+    lastScrollTop = scrollTop;
+  });
+</script>

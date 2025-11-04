@@ -1,0 +1,17 @@
+{
+  "name": "filehost",
+  "version": "1.0.0",
+  "description": "host files locally",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "PORT=5000 node server.js",
+    "host": "node server.js"
+  },
+  "author": "Ryan",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}

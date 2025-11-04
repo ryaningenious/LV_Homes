@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en" data-astro-cid-sckkx6r4>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href={{ "Bi7T037PrUaprig4RTNA7A_lv_homes_logo_03.png" | attachment_public_url }} />
+    <meta name="generator" content="Astro v5.4.1" />
+    <title>LvHomes</title>
+    <link rel="stylesheet" href={{ "LWXkdvpzjECGlqYZ6JOtyQ_homepagev2.css" | attachment_public_url }} />
+  </head>
+  <body data-astro-cid-sckkx6r4>
+    <div class="relative font-poppins bg-deep-teal">
+      <div class="">
+        <div
+          id="fixed-nav"
+          class="fixed top-0 left-0 z-999 right-0 duration-300 ease-in-out"
+        >
+          <div
+            class="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-6 py-4 md:py-2"
+          >
+            <div class="flex-1">
+              <a href="/">
+                <img
+                  src="/_static-files/Bi7T037PrUaprig4RTNA7A_lv_homes_logo_03.png"
+                  alt=""
+                  class="size-24"
+                />
+              </a>
+            </div>
+            <div
+              id="nav-menus"
+              class="flex-1 hidden md:flex items-center gap-4 md:gap-8 justify-center pr-4 bg-gradient-to-r from-gold-100 via-gold-200 via-gold-400 via-gold-300 to-gold-100 bg-clip-text animate-shining font-montserrat py-2"
+            >
+              {% assign menu = get_main_menu() %}
+          
+              {% for menuItem in menu.MenuItems %}
+                  {% assign menuLabelDownCase = menuItem.Label | downcase %}
+              
+                    <a class="menu hover:text-transparent hover:font-semibold {{ menuItem.CssClassName }} {% if Target.RoutePath == menuItem.Label or ContentType.DeveloperName == menuLabelDownCase %} active {% endif %}" href="{{ menuItem.Url }}">
+                    {{ menuItem.Label }}
+                  </a>
+              
+              {% endfor %}
+                
+          
+            </div>
+            <div class="flex-1 hidden md:flex justify-end">
+              <a href="/dubai"
+                ><button
+                  class="px-8 py-2 rounded-full shadow-lg bg-white text-deep-teal font-bold"
+                >
+                  <div class="flex items-center gap-2">
+                    <div>MAPS</div>
+                    <div>
+                      <svg
+                        version="1.0"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="30"
+                        height="30"
+                        viewBox="0 0 1500.000000 1500.000000"
+                        preserveAspectRatio="xMidYMid meet"
+                      >
+                        <g
+                          transform="translate(0.000000,1500.000000) scale(0.100000,-0.100000)"
+                          fill="#000000"
+                          stroke="none"
+                        >
+                          <path
+                            d="M6230 13286 c-1532 -350 -2865 -1271 -3737 -2581 -840 -1261 -1179
+                 -2802 -947 -4305 340 -2208 1857 -4052 3960 -4813 1285 -466 2703 -484 4004
+                 -51 1821 607 3257 2043 3864 3864 104 313 196 686 196 795 0 212 -160 390
+                 -376 420 -156 21 -346 -81 -418 -224 -14 -28 -42 -119 -61 -203 -126 -548
+                 -331 -1069 -602 -1528 l-68 -115 -69 -7 c-55 -5 -94 -19 -214 -76 -149 -71
+                 -280 -119 -407 -148 -100 -22 -167 -59 -230 -125 -128 -134 -156 -312 -78
+                 -478 26 -53 108 -147 148 -169 19 -10 19 -11 -5 -38 -51 -54 -319 -280 -455
+                 -382 -707 -529 -1535 -874 -2395 -996 -284 -40 -437 -51 -760 -51 -323 0 -477
+                 11 -759 51 -1341 191 -2569 911 -3411 1999 -341 441 -631 983 -815 1526 -30
+                 89 -55 165 -55 169 0 4 28 18 63 30 34 12 136 60 227 105 91 45 227 108 302
+                 140 76 32 159 75 185 95 131 99 194 291 147 451 -23 76 -56 128 -119 188 -63
+                 60 -138 97 -224 112 -114 20 -205 -8 -564 -177 -108 -51 -197 -89 -197 -86 0
+                 4 -7 75 -15 157 -115 1184 184 2385 842 3384 329 500 764 962 1248 1326 584
+                 438 1269 753 2002 919 176 40 238 68 309 142 124 127 155 307 80 470 -69 150
+                 -219 245 -385 243 -37 0 -130 -15 -211 -33z"
+                          ></path>
+                          <path
+                            d="M10000 13305 c-628 -72 -1205 -313 -1705 -711 -140 -112 -376 -347
+                 -489 -489 -379 -473 -615 -1030 -688 -1625 -17 -136 -17 -554 0 -690 134
+                 -1088 803 -2042 2057 -2937 302 -215 653 -438 761 -483 151 -63 211 -74 404
+                 -74 162 0 182 2 265 27 127 38 241 97 463 239 1362 870 2140 1780 2407 2814
+                 74 287 100 526 92 847 -6 251 -27 411 -82 634 -113 460 -310 861 -613 1243
+                 -103 129 -393 416 -523 518 -473 366 -976 582 -1564 672 -184 28 -598 36 -785
+                 15z m637 -850 c441 -58 863 -240 1212 -523 722 -585 1030 -1500 800 -2372
+                 -212 -801 -900 -1567 -2067 -2303 -187 -118 -229 -136 -287 -119 -36 11 -342
+                 204 -530 335 -799 556 -1312 1098 -1590 1680 -100 209 -162 404 -202 632 -25
+                 142 -25 558 0 700 42 236 106 434 207 640 353 718 1052 1222 1845 1329 141 19
+                 466 20 612 1z"
+                          ></path>
+                          <path
+                            d="M10119 11334 c-429 -77 -795 -372 -956 -772 -19 -46 -46 -132 -60
+                 -190 -24 -94 -27 -127 -28 -277 0 -235 33 -383 130 -578 116 -233 335 -451
+                 566 -565 171 -84 322 -121 520 -129 276 -11 517 57 751 213 350 233 558 624
+                 558 1049 0 344 -127 653 -370 895 -186 187 -423 309 -684 355 -109 18 -322 18
+                 -427 -1z m349 -849 c141 -42 259 -184 283 -339 28 -175 -61 -345 -224 -432
+                 -72 -39 -73 -39 -187 -39 -109 0 -119 2 -182 32 -86 41 -155 109 -199 198 -32
+                 66 -34 75 -34 180 0 103 2 114 32 177 75 159 244 257 413 241 30 -3 74 -11 98
+                 -18z"
+                          ></path>
+                          <path
+                            d="M4266 7109 c-113 -39 -196 -115 -250 -228 -29 -61 -31 -74 -31 -171
+                 0 -97 2 -110 32 -172 43 -92 110 -160 197 -203 58 -28 97 -39 209 -55 283 -41
+                 503 -102 837 -233 63 -25 140 -48 170 -52 122 -15 261 37 349 130 204 216 134
+                 553 -142 680 -217 100 -586 217 -862 274 -268 55 -412 63 -509 30z"
+                          ></path>
+                          <path
+                            d="M6785 6026 c-128 -31 -232 -115 -288 -233 -30 -64 -32 -75 -32 -178
+                 0 -102 2 -115 31 -175 40 -86 78 -127 183 -202 47 -35 174 -128 281 -207 431
+                 -320 479 -350 596 -366 103 -13 238 28 322 101 189 161 196 461 14 624 -31 28
+                 -138 110 -237 182 -99 73 -262 192 -363 265 -198 145 -249 175 -330 192 -66
+                 14 -112 13 -177 -3z"
+                          ></path>
+                          <path
+                            d="M8906 4670 c-196 -62 -323 -270 -287 -467 25 -138 101 -244 218 -306
+                 172 -90 661 -264 949 -338 179 -45 254 -49 345 -19 79 27 123 56 182 119 151
+                 161 145 422 -12 579 -68 68 -126 95 -306 141 -193 50 -431 129 -620 207 -227
+                 93 -262 104 -340 103 -40 0 -95 -8 -129 -19z"
+                          ></path>
+                        </g>
+                      </svg>
+                    </div>
+                  </div></button
+              ></a>
+            </div>
+            <div
+              class="flex-1 md:hidden flex justify-end items-start text-white pr-2 h-full"
+            >
+              <button
+                id="nav-menuBtn"
+                class="nav-menuBtn md:hidden w-8 h-8 flex flex-col justify-center gap-1.5"
+              >
+                <span class="w-full h-0.5 bg-white"></span>
+                <span class="w-full h-0.5 bg-white"></span>
+                <span class="w-full h-0.5 bg-white"></span>
+              </button>
+              <div id="overlay" class="overlay"></div>
+              <div
+                id="drawer"
+                class="drawer bg-white fixed top-0 left-[-250px] w-[250px] h-screen bg-white text-black transition-[left] duration-300 ease-in-out p-[20px] z-999"
+              >
+                <button class="nav-menuBtnClose">
+                  <svg
+                    width="800px"
+                    height="800px"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-12 h-12"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="#1C274C"
+                      stroke-width="1"
+                    ></circle>
+                    <path
+                      d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5"
+                      stroke="#1C274C"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    ></path>
+                  </svg>
+                </button>
+                <div class="space-y-4 text-xl mt-16">
+                  {% assign menu = get_main_menu() %}
+      
+                  {% for menuItem in menu.MenuItems %}
+                      {% assign menuLabelDownCase = menuItem.Label | downcase %}
+                      <p class="nav-item">
+                          <a class="{{ menuItem.CssClassName }} {% if Target.RoutePath == menuItem.Label or ContentType.DeveloperName == menuLabelDownCase %} active {% endif %}" href="{{ menuItem.Url }}">
+                          {{ menuItem.Label }}
+                          </a>
+                      </p>
+                  {% endfor %}
+                </div>
+              </div>
+              <script type="module">
+                document
+                  .getElementById("drawer")
+                  ?.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                  });
+                const n = () => {
+                    document.getElementById("drawer")?.classList.add("open"),
+                      document.getElementById("overlay")?.classList.add("show");
+                  },
+                  t = () => {
+                    document.getElementById("drawer")?.classList.remove("open"),
+                      document
+                        .getElementById("overlay")
+                        ?.classList.remove("show");
+                  },
+                  l = document.querySelectorAll("button.nav-menuBtn");
+                l.forEach((e) => {
+                  e.addEventListener("click", () => {
+                    n();
+                  });
+                });
+                const c = document.querySelectorAll("button.nav-menuBtnClose");
+                c.forEach((e) => {
+                  e.addEventListener("click", () => {
+                    t();
+                  });
+                });
+                const d = document.querySelectorAll("div.overlay");
+                d.forEach((e) => {
+                  e.addEventListener("click", () => {
+                    t();
+                  });
+                });
+                let o = 0;
+                window.addEventListener("scroll", () => {
+                  let e = window.scrollY;
+                  e > o && t(), (o = e);
+                });
+              </script>
+            </div>
+          </div>
+        </div>
+        <div class="h-[35vh]"></div>
+        <nav id="navbar" class="px-4 md:px-6 py-4 md:py-8">
+          <div
+            class="max-w-7xl mx-auto flex justify-between items-center relative"
+          >
+            <div class="flex-1 hidden md:block"></div>
+            <div class="flex-1 flex md:justify-center">
+              <a
+                id="company-logo"
+                href="/"
+                class="hidden md:block text-xl md:text-2xl font-medium scale-500"
+              >
+                <img
+                  src="/_static-files/Bi7T037PrUaprig4RTNA7A_lv_homes_logo_03.png"
+                  alt=""
+                  class="w-16 h-16"
+                />
+              </a>
+              <a
+                id="company-logo-mbl"
+                href="/"
+                class="absolute top-0 left-1/2 -translate-x-[50%] -translate-y-[40%] md:hidden text-xl md:text-2xl font-medium"
+              >
+                <img
+                  src="/_static-files/Bi7T037PrUaprig4RTNA7A_lv_homes_logo_03.png"
+                  alt=""
+                  class="size-64 min-w-64"
+                />
+              </a>
+            </div>
+            <div class="flex-1 hidden md:flex"></div>
+            <div class="md:hidden flex-1 flex justify-end"></div>
+          </div>
+        </nav>
+        <div
+          id="hero-tagline"
+          class="px-4 md:px-6 py-4 md:py-8 mt-32 md:mt-16 md:space-y-3 mb-48"
+        >
+          <div
+            class="max-w-7xl mx-auto font-semibold text-2xl md:text-5xl text-center bg-gradient-to-r from-gold-100 via-gold-200 via-gold-400 via-gold-300 to-gold-100 bg-clip-text text-transparent animate-shining font-montserrat font-bold py-2"
+          >
+            Discover Luxury Living
+          </div>
+          <div
+            class="max-w-7xl mx-auto text-lg md:text-3xl text-center font-nunito"
+          >
+            Where dreams become <span class="font-nyght">reality</span>
+          </div>
+          <div class="flex justify-center mt-5">
+            <a href="/dubai"
+              ><button class="h-16 w-48 border">Explore</button></a
+            >
+          </div>
+        </div>
+        <div id="tag-section" class="min-h-[50vh] max-h-[50vh]">
+          <div
+            id="tag-section-content"
+            class="sticky top-1/2 left-0 right-0 mx-auto text-center py-16 bg-gradient-to-br from-gold-250 to-gold-150 bg-clip-text text-transparent"
+          >
+            <div class="text-[4em]/14 md:text-[10em]/40 m-0 p-0">
+              YOUR PARTNER
+            </div>
+            <div class="text-[4em]/14 md:text-[10em]/40 m-0 p-0">
+              IN DUBAI REAL ESTATE
+            </div>
+          </div>
+        </div>
+        <section id="about-section" class="hidden md:block">
+          <div class="h-screen relative">
+            <div class="flex justify-center">
+              <div
+                id="about-gradient"
+                class="absolute top-0 right-0 left-0 bottom-0 z-20 bg-gradient-to-t from-deep-teal from-[15%] to-transparent to-[90%] size-full h-screen"
+              ></div>
+              <div
+                id="about-content-background"
+                class="font-nyght absolute top-0 z-10 text-5xl px-16 w-full h-screen flex items-center justify-center overflow-hidden"
+              >
+                <img
+                  src="/_static-files/k_cGTzUEj0KO0Ufa4AYeRw_about_section.png"
+                  alt=""
+                  srcset=""
+                  sizes="100vw"
+                  class="absolute top-0 right-0 left-0 z-10 w-screen h-screen object-cover"
+                />
+              </div>
+              <div
+                id="about-content"
+                class="absolute font-thin bottom-0 z-30 text-4xl px-16 pb-16 w-full flex items-center justify-center"
+              >
+                " At Lux Veritas Homes, we believe in crafting homes that blend
+                elegance with integrity. Our mission is to bring light and truth
+                into every space we design, creating lasting value and comfort
+                for every homeowner.
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="about-section-mbl" class="md:hidden">
+          <div
+            class="flex justify-center items-center h-screen bg-black relative"
+          >
+            <img
+              src="/_static-files/k_cGTzUEj0KO0Ufa4AYeRw_about_section.png"
+              alt=""
+              srcset=""
+              sizes="100vw"
+              class="w-screen h-screen object-cover"
+            />
+            <div
+              class="absolute bottom-0 pb-16 z-20 right-0 left-0 md:font-thin text-xl md:text-3xl px-16"
+            >
+              " At Lux Veritas Homes, we believe in crafting homes that blend
+              elegance with integrity. Our mission is to bring light and truth
+              into every space we design, creating lasting value and comfort for
+              every homeowner. "
+            </div>
+            <div
+              class="absolute top-0 z-10 size-full bg-gradient-to-t from-deep-teal from-[15%] to-transparent"
+            ></div>
+          </div>
+        </section>
+        <div id="offer-section" class="light mt-48">
+          <div class="min-h-screen overflow-hidden">
+            <div class="space-y-8 w-[95vw] overflow-hidden w-full">
+              <div
+                class="max-w-7xl size-full mx-auto flex justify-center md:justify-start"
+              >
+                <div
+                  class="text-center md:text-left text-5xl md:text-7xl bg-gradient-to-r from-gold-250 to-gold-150 text-transparent bg-clip-text py-4"
+                >
+                  What We Offer
+                </div>
+              </div>
+              <div
+                id="offer-list"
+                class="max-w-7xl mx-auto min-h-150 flex flex-nowrap overflow-hidden"
+              >
+              {% assign features = get_content_items(ContentType='features', Filter="", OrderBy="CreationTime asc", PageSize=100) %}
+
+              {% if features.TotalCount > 0 %}
+        
+              {% for item in features.Items %}
+                <div
+                  class="text-deep-teal content relative max-w-7xl min-h-150 min-w-[100%] flex w-full flex-col md:flex-row md:flex-row-reverse"
+                >
+                  <div class="grow w-full p-8">
+                    <img
+                      src="{{ item.PublishedContent.image.Text | attachment_public_url }}"
+                      alt=""
+                      class="size-full object-cover bg-gray-100"
+                    />
+                  </div>
+                  <div class="min-w-[40%]">
+                    <div
+                      class="w-full p-8 flex flex-col justify-center text-white md:text-deep-teal md:bg-white/90 md:absolute md:top-1/2 md:max-w-[50%] md:-translate-y-[50%]"
+                    >
+                      <div class="text-2xl md:text-7xl font-semibold">
+                        {{ item.PublishedContent.title.Text }}
+                      </div>
+                      <div>
+                        {{ item.PublishedContent.description.Text }}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+              
+              {% endif %}  
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="featured-section" class="mb-48">
+          <div class="min-h-screen space-y-16 pb-16 pt-8 w-full">
+            <div
+              class="max-w-7xl size-full mx-auto flex justify-center md:justify-end"
+            >
+              <div
+                class="text-center md:text-right text-5xl md:text-7xl bg-gradient-to-r from-gold-250 to-gold-150 text-transparent bg-clip-text py-4"
+              >
+                Featured Project
+              </div>
+            </div>
+            <div
+              class="max-w-7xl mx-auto flex flex-col md:flex-row justify-center items-center flex-wrap gap-4 gap-y-16"
+            >
+            {% assign projects = get_content_items(ContentType='projects', Filter="", OrderBy="CreationTime asc", PageSize=100) %}
+
+            {% if projects.TotalCount > 0 %}
+      
+            {% for item in projects.Items %}
+              <div class="size-96 basis-1 md:basis-1/4 hover:scale-[1.1] duration-300 ease-in-out hover:font-semibold hover:-translate-y-[5%]">
+                <a
+                  href="{{ PathBase }}/{{ item.RoutePath }}"
+                  class="w-full"
+                >
+                  <div class="w-full h-64 md:size-88 mx-auto">
+                    <img
+                      src="{{ item.PublishedContent.main_image.Text | attachment_public_url }}"
+                      alt=""
+                      class="w-full grow size-64 md:size-88 object-cover"
+                    />
+                  </div>
+                </a>
+                <div class="text-center mt-4">{{ item.PrimaryField }}</div>
+              </div>
+            {% endfor %}
+            
+            {% endif %}  
+              
+            </div>
+          </div>
+        </div>
+        <div id="partner-section" class="bg-white py-8 text-gray-900 mb-48">
+          <div class="flex flex-col justify-center items-center space-y-16">
+            <div>
+              <section
+                class="embla w-screen overflow-hidden"
+                data-astro-cid-vvf6hnf5
+              >
+                <div
+                  class="embla__viewport overflow-hidden mx-auto"
+                  data-astro-cid-vvf6hnf5
+                >
+                  <div
+                    class="embla__container flex flex-nowrap"
+                    data-astro-cid-vvf6hnf5
+                  >
+                  {% assign partners = get_content_items(ContentType='partners', Filter="", OrderBy="CreationTime asc", PageSize=100) %}
+
+                  {% if partners.TotalCount > 0 %}
+            
+                  {% for item in partners.Items %}
+                    <div
+                      class="h-32 min-h-32 min-w-40 flex justify-center items-center p-5"
+                      data-astro-cid-qstzimzz
+                    >
+                      <img
+                        src="{{ item.PublishedContent.logo.Text | attachment_public_url }}"
+                        alt=""
+                        class="size-32 hover:scale-[1.3] duration-300 ease-in-out"
+                        data-astro-cid-qstzimzz
+                      />
+                    </div>
+                  {% endfor %}
+                  
+                  {% endif %}  
+                  </div>
+                </div>
+              </section>
+              <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
+              <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
+              <script src="https://unpkg.com/embla-carousel-auto-scroll/embla-carousel-auto-scroll.umd.js"></script>
+              <script type="text/javascript">
+                document.addEventListener("DOMContentLoaded", function () {
+                  const OPTIONS = { dragFree: true, loop: true };
+
+                  const emblaNode = document.querySelector(".embla");
+                  const viewportNode =
+                    emblaNode.querySelector(".embla__viewport");
+
+                  if (
+                    !EmblaCarousel ||
+                    !EmblaCarouselAutoplay ||
+                    !EmblaCarouselAutoScroll
+                  ) {
+                    console.error(
+                      "EmblaCarousel or Autoplay plugin failed to load."
+                    );
+                    return;
+                  }
+
+                  const emblaApi = EmblaCarousel(viewportNode, OPTIONS, [
+                    EmblaCarouselAutoScroll({ playOnInit: true }),
+                  ]);
+                });
+              </script>
+              <section
+                class="embla_rev w-screen overflow-hidden"
+                data-astro-cid-qstzimzz
+              >
+                <div
+                  class="embla__viewport overflow-hidden mx-auto"
+                  data-astro-cid-qstzimzz
+                >
+                  <div
+                    class="embla__container flex flex-nowrap gap-5"
+                    data-astro-cid-qstzimzz
+                  >
+                  {% assign partnersRev = get_content_items(ContentType='partners', Filter="", OrderBy="CreationTime asc", PageSize=100) %}
+
+                    {% if partnersRev.TotalCount > 0 %}
+              
+                    {% for item in partnersRev.Items %}
+                      <div
+                        class="h-32 min-h-32 min-w-40 flex justify-center items-center p-5"
+                        data-astro-cid-qstzimzz
+                      >
+                        <img
+                          src="{{ item.PublishedContent.logo.Text | attachment_public_url }}"
+                          alt=""
+                          class="size-32 hover:scale-[1.3] duration-300 ease-in-out"
+                          data-astro-cid-qstzimzz
+                        />
+                      </div>
+                    {% endfor %}
+                    
+                    {% endif %} 
+                  </div>
+                </div>
+              </section>
+              <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
+              <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
+              <script src="https://unpkg.com/embla-carousel-auto-scroll/embla-carousel-auto-scroll.umd.js"></script>
+              <script type="text/javascript">
+                document.addEventListener("DOMContentLoaded", function () {
+                  const OPTIONS = { dragFree: true, loop: true };
+
+                  const emblaNode = document.querySelector(".embla_rev");
+                  const viewportNode =
+                    emblaNode.querySelector(".embla__viewport");
+
+                  if (
+                    !EmblaCarousel ||
+                    !EmblaCarouselAutoplay ||
+                    !EmblaCarouselAutoScroll
+                  ) {
+                    console.error(
+                      "EmblaCarousel or Autoplay plugin failed to load."
+                    );
+                    return;
+                  }
+
+                  const emblaApi = EmblaCarousel(viewportNode, OPTIONS, [
+                    EmblaCarouselAutoScroll({
+                      playOnInit: true,
+                      direction: "backward",
+                    }),
+                  ]);
+                });
+              </script>
+            </div>
+          </div>
+        </div>
+        <div id="blog-section" class="min-h-screen">
+          <div class="min-h-[75vh] space-y-16 py-16">
+            <div
+              class="max-w-7xl size-full mx-auto flex justify-center md:justify-start"
+            >
+              <div
+                class="text-center md:text-left text-5xl md:text-7xl bg-gradient-to-r from-gold-250 to-gold-150 text-transparent bg-clip-text py-4"
+              >
+                Blogs
+              </div>
+            </div>
+            <div
+              class="flex flex-col md:flex-row justify-center items-center gap-4 max-w-7xl mx-auto p-4"
+            >
+            {% assign blogs = get_content_items(ContentType='posts', Filter="", OrderBy="CreationTime asc", PageSize=3) %}
+
+            {% if blogs.TotalCount > 0 %}
+      
+            {% for item in blogs.Items %}
+              <div
+                class="min-w-[100%] md:min-w-[30%] min-h-96 flex-1 flex flex-col flex-nowrap hover:scale-[1.1] duration-300 ease-in-out hover:font-semibold hover:-translate-y-[5%]"
+              >
+                <div class="w-full">
+                  <a
+                    href="{{ PathBase }}/{{ item.RoutePath }}"
+                  >
+                    <img
+                      src="{{ item.PublishedContent.featured_image.Text | attachment_public_url }}"
+                      alt=""
+                      class="w-full grow bg-gray-300 min-h-64"
+                    />
+                  </a>
+                </div>
+                <div class="p-4 text-xl">
+                  {{ item.PrimaryField }}
+                </div>
+              </div>
+            {% endfor %}
+            
+            {% endif %}
+            </div>
+            <div class="flex justify-center">
+              <a href="/posts" class="">
+                <button
+                  class="bg-white text-deep-teal shadow-lg px-16 py-2 rounded-full border-gray-50 hover:scale-[1.1] duration-300 ease-in-out"
+                >
+                  Read More
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dark relative bg-deep-teal font-poppins min-h-screen">
+      <div id="water-section">
+        <div class="h-[50vh] overflow-hidden relative">
+          <video class="object-cover w-screen h-[50vh]" autoplay loop muted>
+            <source
+              src="/_static-files/Ng6Pc2U3bUieXIiTMzD5Dw_whatsapp_video_2025_02_28_at_11_49_36_am.mp4"
+              type="video/mp4"
+            />
+          </video>
+          <div
+            class="size-full absolute top-0 right-0 left-0 bg-gradient-to-t from-deep-teal to-transparent"
+          ></div>
+          <div
+            class="size-full absolute top-0 right-0 left-0 bg-gradient-to-b from-deep-teal from-[5%] to-transparent"
+          >
+            <div
+              class="size-full absolute top-0 right-0 left-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-8 max-w-7xl mx-auto"
+            >
+              <div>
+                <div
+                  class="text-3xl md:text-5xl text-center lg:text-left font-bold bg-gradient-to-r from-gold-300 via-gold-100 to-gold-200 bg-clip-text text-transparent"
+                >
+                  Join Us Today!
+                </div>
+                <div class="text-xl md:text-3xl text-center md:text-left">
+                  Be a part of our journey and make a difference.
+                </div>
+              </div>
+              <a href="/contact_us/Contact-Us"
+                ><button
+                  class="bg-white text-deep-teal px-6 py-4 rounded-full text-lg font-semibold"
+                >
+                  CONTACT US
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="max-w-7xl mx-auto pt-16 pb-32 bg-deep-teal">
+        <div
+          class="flex flex-col items-center p-4 md:p-0 md:flex-row md:justify-between items-start gap-8"
+        >
+          <div class="flex-1">
+            <a href="/">
+              <img
+                src="/_static-files/9L6Y6lxxZUy6-2Vqu63RRw_lv_logo_left_crop.png"
+                alt="Company Logo"
+                class="size-32 md:size-48 min-w-32 md:min-w-48"
+              />
+            </a>
+          </div>
+          <div class="flex-1 md:space-y-8 flex flex-col items-start gap-4">
+            <h3 class="text-xl md:text-2xl">Navigation</h3>
+            <ul class="space-y-4">
+            {% assign menu = get_main_menu() %}
+          
+              {% for menuItem in menu.MenuItems %}
+                  {% assign menuLabelDownCase = menuItem.Label | downcase %}
+                    <li><a class="hover:text-gold-500" href="{{ menuItem.Url }}">{{ menuItem.Label }}</a></li>
+                  </a>
+              
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="flex-1 md:space-y-8 flex flex-col gap-4">
+            <div class="text-xl md:text-2xl">Contact Us</div>
+            <ul class="space-y-4">
+              <li class="flex gap-2">
+                <div>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M3.75 5.25L3 6V18L3.75 18.75H20.25L21 18V6L20.25 5.25H3.75ZM4.5 7.6955V17.25H19.5V7.69525L11.9999 14.5136L4.5 7.6955ZM18.3099 6.75H5.68986L11.9999 12.4864L18.3099 6.75Z"
+                      fill="#FFFFFF"
+                    ></path>
+                  </svg>
+                </div>
+                <div><a href="mailto:info@luxveritas.ae">info@luxveritas.ae</a></div>
+              </li>
+              <li class="flex gap-2">
+                <div>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16.1007 13.359L15.5719 12.8272H15.5719L16.1007 13.359ZM16.5562 12.9062L17.085 13.438H17.085L16.5562 12.9062ZM18.9728 12.5894L18.6146 13.2483L18.9728 12.5894ZM20.8833 13.628L20.5251 14.2869L20.8833 13.628ZM21.4217 16.883L21.9505 17.4148L21.4217 16.883ZM20.0011 18.2954L19.4723 17.7636L20.0011 18.2954ZM18.6763 18.9651L18.7459 19.7119H18.7459L18.6763 18.9651ZM8.81536 14.7266L9.34418 14.1947L8.81536 14.7266ZM4.00289 5.74561L3.2541 5.78816L3.2541 5.78816L4.00289 5.74561ZM10.4775 7.19738L11.0063 7.72922H11.0063L10.4775 7.19738ZM10.6342 4.54348L11.2346 4.09401L10.6342 4.54348ZM9.37326 2.85908L8.77286 3.30855V3.30855L9.37326 2.85908ZM6.26145 2.57483L6.79027 3.10667H6.79027L6.26145 2.57483ZM4.69185 4.13552L4.16303 3.60368H4.16303L4.69185 4.13552ZM12.0631 11.4972L12.5919 10.9654L12.0631 11.4972ZM16.6295 13.8909L17.085 13.438L16.0273 12.3743L15.5719 12.8272L16.6295 13.8909ZM18.6146 13.2483L20.5251 14.2869L21.2415 12.9691L19.331 11.9305L18.6146 13.2483ZM20.8929 16.3511L19.4723 17.7636L20.5299 18.8273L21.9505 17.4148L20.8929 16.3511ZM18.6067 18.2184C17.1568 18.3535 13.4056 18.2331 9.34418 14.1947L8.28654 15.2584C12.7186 19.6653 16.9369 19.8805 18.7459 19.7119L18.6067 18.2184ZM9.34418 14.1947C5.4728 10.3453 4.83151 7.10765 4.75168 5.70305L3.2541 5.78816C3.35456 7.55599 4.14863 11.144 8.28654 15.2584L9.34418 14.1947ZM10.7195 8.01441L11.0063 7.72922L9.9487 6.66555L9.66189 6.95073L10.7195 8.01441ZM11.2346 4.09401L9.97365 2.40961L8.77286 3.30855L10.0338 4.99296L11.2346 4.09401ZM5.73263 2.04299L4.16303 3.60368L5.22067 4.66736L6.79027 3.10667L5.73263 2.04299ZM10.1907 7.48257C9.66189 6.95073 9.66117 6.95144 9.66045 6.95216C9.66021 6.9524 9.65949 6.95313 9.659 6.95362C9.65802 6.95461 9.65702 6.95561 9.65601 6.95664C9.65398 6.95871 9.65188 6.96086 9.64972 6.9631C9.64539 6.96759 9.64081 6.97245 9.63599 6.97769C9.62634 6.98816 9.61575 7.00014 9.60441 7.01367C9.58174 7.04072 9.55605 7.07403 9.52905 7.11388C9.47492 7.19377 9.41594 7.2994 9.36589 7.43224C9.26376 7.70329 9.20901 8.0606 9.27765 8.50305C9.41189 9.36833 10.0078 10.5113 11.5343 12.0291L12.5919 10.9654C11.1634 9.54499 10.8231 8.68059 10.7599 8.27309C10.7298 8.07916 10.761 7.98371 10.7696 7.96111C10.7748 7.94713 10.7773 7.9457 10.7709 7.95525C10.7677 7.95992 10.7624 7.96723 10.7541 7.97708C10.75 7.98201 10.7451 7.98759 10.7394 7.99381C10.7365 7.99692 10.7335 8.00019 10.7301 8.00362C10.7285 8.00534 10.7268 8.00709 10.725 8.00889C10.7241 8.00979 10.7232 8.0107 10.7223 8.01162C10.7219 8.01208 10.7212 8.01278 10.7209 8.01301C10.7202 8.01371 10.7195 8.01441 10.1907 7.48257ZM11.5343 12.0291C13.0613 13.5474 14.2096 14.1383 15.0763 14.2713C15.5192 14.3392 15.8763 14.285 16.1472 14.1841C16.28 14.1346 16.3858 14.0763 16.4658 14.0227C16.5058 13.9959 16.5392 13.9704 16.5663 13.9479C16.5799 13.9367 16.5919 13.9262 16.6024 13.9166C16.6077 13.9118 16.6126 13.9073 16.6171 13.903C16.6194 13.9008 16.6215 13.8987 16.6236 13.8967C16.6246 13.8957 16.6256 13.8947 16.6266 13.8937C16.6271 13.8932 16.6279 13.8925 16.6281 13.8923C16.6288 13.8916 16.6295 13.8909 16.1007 13.359C15.5719 12.8272 15.5726 12.8265 15.5733 12.8258C15.5735 12.8256 15.5742 12.8249 15.5747 12.8244C15.5756 12.8235 15.5765 12.8226 15.5774 12.8217C15.5793 12.82 15.581 12.8183 15.5827 12.8166C15.5862 12.8133 15.5895 12.8103 15.5926 12.8074C15.5988 12.8018 15.6044 12.7969 15.6094 12.7929C15.6192 12.7847 15.6265 12.7795 15.631 12.7764C15.6403 12.7702 15.6384 12.773 15.6236 12.7785C15.5991 12.7876 15.501 12.8189 15.3038 12.7886C14.8905 12.7253 14.02 12.3853 12.5919 10.9654L11.5343 12.0291ZM9.97365 2.40961C8.95434 1.04802 6.94996 0.83257 5.73263 2.04299L6.79027 3.10667C7.32195 2.578 8.26623 2.63181 8.77286 3.30855L9.97365 2.40961ZM4.75168 5.70305C4.73201 5.35694 4.89075 4.9954 5.22067 4.66736L4.16303 3.60368C3.62571 4.13795 3.20329 4.89425 3.2541 5.78816L4.75168 5.70305ZM19.4723 17.7636C19.1975 18.0369 18.9029 18.1908 18.6067 18.2184L18.7459 19.7119C19.4805 19.6434 20.0824 19.2723 20.5299 18.8273L19.4723 17.7636ZM11.0063 7.72922C11.9908 6.7503 12.064 5.2019 11.2346 4.09401L10.0338 4.99295C10.4373 5.53193 10.3773 6.23938 9.9487 6.66555L11.0063 7.72922ZM20.5251 14.2869C21.3429 14.7315 21.4703 15.7769 20.8929 16.3511L21.9505 17.4148C23.2908 16.0821 22.8775 13.8584 21.2415 12.9691L20.5251 14.2869ZM17.085 13.438C17.469 13.0562 18.0871 12.9616 18.6146 13.2483L19.331 11.9305C18.2474 11.3414 16.9026 11.5041 16.0273 12.3743L17.085 13.438Z"
+                      fill="#FFFFFF"
+                    ></path>
+                  </svg>
+                </div>
+                <div>+971 58 568 3589</div>
+              </li>
+              <li class="flex gap-2">
+                <div>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z"
+                      stroke="#FFFFFF"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
+                      stroke="#FFFFFF"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  1101, Ibn Battuta Gate Offices, Sheikh Zayed Road, Dubai. UAE
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex-1 flex flex-col justify-start items-center md:space-y-8 gap-4"
+          >
+            <h3 class="text-xl md:text-2xl">Follow Us</h3>
+            <div class="flex gap-4">
+              <a
+                class="hover:text-gold-500 text-white"
+                href="#"
+                target="_blank"
+                class="social-icon"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="hover:text-gold-500"
+                >
+                  <path
+                    d="M22.675 0H1.325C0.593 0 0 0.593 0 1.325v21.351C0 23.407 0.593 24 1.325 24H12.82v-9.294H9.692V11.08h3.127V8.408c0-3.1 1.894-4.79 4.662-4.79 1.325 0 2.463.099 2.796.142v3.24h-1.92c-1.504 0-1.794.715-1.794 1.763v2.315h3.588l-.467 3.626h-3.121V24h6.117C23.407 24 24 23.407 24 22.675V1.325C24 0.593 23.407 0 22.675 0z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                class="hover:text-gold-500"
+                href="#"
+                target="_blank"
+                class="social-icon"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="white"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.327-.027-3.035-1.849-3.035-1.849 0-2.133 1.444-2.133 2.94v5.664H9.356V9.001h3.412v1.561h.048c.476-.902 1.637-1.849 3.369-1.849 3.602 0 4.269 2.368 4.269 5.448v6.291h-.007zM5.337 7.433c-1.144 0-2.068-.926-2.068-2.069s.925-2.069 2.068-2.069c1.145 0 2.069.926 2.069 2.069 0 1.143-.924 2.069-2.069 2.069zM7.114 20.452H3.557V9h3.557v11.452zM22.225 0H1.771C.792 0 0 .792 0 1.771v20.457C0 23.207.792 24 1.771 24h20.457C23.207 24 24 23.208 24 22.228V1.771C24 .792 23.208 0 22.225 0z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                class="hover:text-gold-500"
+                href="#"
+                target="_blank"
+                class="social-icon"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="white"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.004 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.693 4.919 4.919.058 1.265.07 1.645.07 4.85s-.012 3.585-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.265.058-1.645.07-4.85.07s-3.585-.012-4.85-.07c-3.225-.148-4.771-1.694-4.919-4.919-.058-1.265-.07-1.645-.07-4.85s.012-3.585.07-4.85C2.384 3.926 3.899 2.38 7.154 2.232c1.265-.058 1.645-.07 4.85-.07M12 0C8.74 0 8.332.015 7.052.073 1.942.327.327 1.942.073 7.052.015 8.332 0 8.74 0 12c0 3.26.015 3.668.073 4.948.254 5.11 1.869 6.725 6.979 6.979 1.28.058 1.688.073 4.948.073 3.26 0 3.668-.015 4.948-.073 5.11-.254 6.725-1.869 6.979-6.979.058-1.28.073-1.688.073-4.948 0-3.26-.015-3.668-.073-4.948-.254-5.11-1.869-6.725-6.979-6.979C15.668.015 15.26 0 12 0zm0 5.838c-3.403 0-6.162 2.76-6.162 6.162 0 3.403 2.76 6.162 6.162 6.162 3.403 0 6.162-2.76 6.162-6.162 0-3.403-2.76-6.162-6.162-6.162zm0 10.154c-2.208 0-3.992-1.784-3.992-3.992S9.792 8.008 12 8.008s3.992 1.784 3.992 3.992-1.784 3.992-3.992 3.992zm6.406-10.738c0 .796-.646 1.442-1.442 1.442s-1.442-.646-1.442-1.442c0-.796.646-1.442 1.442-1.442s1.442.646 1.442 1.442z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+    ></script>
+    <script type="module">
+      document.addEventListener("DOMContentLoaded", (e) => {
+        gsap.registerPlugin(ScrollTrigger);
+        const r = new Lenis();
+        r.on("scroll", ScrollTrigger.update),
+          gsap.ticker.add((o) => {
+            r.raf(o * 1e3);
+          }),
+          gsap.ticker.lagSmoothing(0),
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: "#tag-section",
+                start: "top center",
+                end: "top 40%",
+                scrub: 0.5,
+              },
+            })
+            .fromTo(
+              "#tag-section-content",
+              { y: "150%" },
+              { y: "0", scale: 1, duration: 5, ease: "power1.in" }
+            ),
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: "#tag-section",
+                start: "top center",
+                end: "top 40%",
+                scrub: 0.5,
+              },
+            })
+            .fromTo(
+              "#hero-tagline",
+              { opacity: 1 },
+              { opacity: 0, scale: 1, duration: 5, ease: "power1.in" }
+            ),
+          gsap.fromTo(
+            "#tag-section",
+            { y: "0%" },
+            {
+              y: "100%",
+              ease: "none",
+              scrollTrigger: {
+                trigger: "#about-section",
+                start: "top center",
+                end: "bottom bottom",
+                scrub: 0,
+              },
+            }
+          ),
+          gsap.fromTo(
+            "#fixed-nav",
+            { backgroundColor: "transparent" },
+            {
+              backgroundColor: "#062633",
+              scrollTrigger: {
+                trigger: "#tag-section",
+                start: "top top",
+                end: "top 40%",
+                scrub: 0.5,
+              },
+            }
+          ),
+          gsap.fromTo(
+            "#about-section-mbl",
+            { y: "50%" },
+            {
+              y: "0%",
+              scrollTrigger: {
+                trigger: "#tag-section",
+                start: "bottom center",
+                end: "bottom 30%",
+                scrub: 0.5,
+              },
+            }
+          ),
+          gsap.fromTo(
+            "#about-content",
+            { scale: 0, borderRadius: "500% 500% 0% 0%;" },
+            {
+              scale: 1,
+              borderRadius: "0% 0% 0% 0%;",
+              scrollTrigger: {
+                trigger: "#about-section",
+                start: "top center",
+                end: "bottom bottom",
+                scrub: 0.5,
+              },
+            }
+          ),
+          gsap.fromTo(
+            "#about-gradient",
+            { y: "100%" },
+            {
+              y: "0%",
+              scrollTrigger: {
+                trigger: "#about-section",
+                start: "top center",
+                end: "bottom bottom",
+                scrub: 0.5,
+              },
+            }
+          ),
+          gsap.fromTo(
+            "#about-content-background",
+            { y: "100%", borderRadius: "500% 500% 0% 0%;", width: "0vw" },
+            {
+              y: "0%",
+              borderRadius: "0% 0% 0% 0%;",
+              width: "100vw",
+              scrollTrigger: {
+                trigger: "#about-section",
+                start: "top 80%",
+                end: "bottom bottom",
+                scrub: 0.5,
+              },
+            }
+          );
+        const t = gsap.utils.toArray("#offer-list .content");
+        gsap.to(t, {
+          xPercent: -100 * (t.length - 1),
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#offer-section",
+            start: "top top",
+            end: "+=1000",
+            pin: !0,
+            scrub: 0.8,
+            snap: 1 / (t.length - 1),
+          },
+        });
+      });
+    </script>
+    <script type="module">
+      let l = 0;
+      const t = document.getElementById("fixed-nav");
+      window.addEventListener("scroll", () => {
+        let e = window.scrollY;
+        t &&
+          (e > l
+            ? (t.style.transform = "translateY(-100%)")
+            : (t.style.transform = "translateY(0)"),
+          (l = e));
+      });
+    </script>
+    <script src="https://unpkg.com/lenis@1.1.22/dist/lenis.min.js"></script>
+  </body>
+</html>
