@@ -39,13 +39,13 @@ Run the following command to create a backup file:
 #### User Uploads
 
 ```sh
-docker run --rm -v raytha_raytha_user_uploads:/data -v C:\Users\user\Documents:/backup ubuntu tar cvzf /backup/raytha_raytha_user_uploads_backup.tar.gz -C /data .
+docker run --rm -v raytha_raytha_user_uploads:/data -v C:\Users\ryan\Documents:/backup ubuntu tar cvzf /backup/raytha_raytha_user_uploads_backup.tar.gz -C /data .
 ```
 
 #### PG Data
 
 ```sh
-docker run --rm -v raytha_raytha_pg_data:/data -v C:\Users\user\Documents:/backup ubuntu tar cvzf /backup/raytha_raytha_pg_data_backup.tar.gz -C /data .
+docker run --rm -v raytha_raytha_pg_data:/data -v C:\Users\ryan\Documents:/backup ubuntu tar cvzf /backup/raytha_raytha_pg_data_backup.tar.gz -C /data .
 ```
 
 ### **3️⃣ Verify the Backup**
@@ -55,13 +55,13 @@ Check if the backup file was created:
 #### User Uploads
 
 ```sh
-ls C:\Users\user\Documents\raytha_raytha_user_uploads_backup.tar.gz
+ls C:\Users\ryan\Documents\raytha_raytha_user_uploads_backup.tar.gz
 ```
 
 #### PG Data
 
 ```sh
-ls C:\Users\user\Documents\raytha_raytha_pg_data_backup.tar.gz
+ls C:\Users\ryan\Documents\raytha_raytha_pg_data_backup.tar.gz
 ```
 
 ---
@@ -81,13 +81,13 @@ exit
 #### User Uploads
 
 ```sh
-scp user@DESKTOP-4AEAPEN.local:C:\Users\user\Documents\raytha_raytha_user_uploads_backup.tar.gz C:\Users\ryan\Documents\
+scp user@DESKTOP-4AEAPEN.local:C:\Users\ryan\Documents\raytha_raytha_user_uploads_backup.tar.gz C:\Users\ryan\Documents\
 ```
 
 #### PG Data
 
 ```sh
-scp user@DESKTOP-4AEAPEN.local:C:\Users\user\Documents\raytha_raytha_pg_data_backup.tar.gz C:\Users\ryan\Documents\
+scp user@DESKTOP-4AEAPEN.local:C:\Users\ryan\Documents\raytha_raytha_pg_data_backup.tar.gz C:\Users\ryan\Documents\
 ```
 
 ---
@@ -109,11 +109,15 @@ docker volume create raytha_raytha_pg_data
 docker run --rm -v raytha_raytha_user_uploads:/data -v C:\Users\ryan\Documents:/backup ubuntu tar xvzf /backup/raytha_raytha_user_uploads_backup.tar.gz -C /data
 ```
 
+sudo docker run --rm -v raytha_raytha_user_uploads:/data -v ~:/backup ubuntu tar xvzf /backup/raytha_raytha_user_uploads_backup.tar.gz -C /data
+
 #### PG Data
 
 ```sh
 docker run --rm -v raytha_raytha_pg_data:/data -v C:\Users\ryan\Documents:/backup ubuntu tar xvzf /backup/raytha_raytha_pg_data_backup.tar.gz -C /data
 ```
+
+sudo docker run --rm -v raytha_raytha_pg_data:/data -v ~:/backup ubuntu tar xvzf /backup/raytha_raytha_pg_data_backup.tar.gz -C /data
 
 ### **3️⃣ Verify the Restoration**
 
